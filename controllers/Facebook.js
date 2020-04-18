@@ -1,5 +1,7 @@
 const axios = require("axios");
-
+const APP_ID = process.env.APP_ID;
+const APP_SECRET = process.env.APP_SECRET;
+const FB_USER_ID = process.env.FB_USER_ID;
 /*
 https://codepen.io/knitesh/full/VwvYyaQ
 Test User:
