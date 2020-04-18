@@ -1,6 +1,6 @@
-require("dotenv").config();
-const express = require("express"),
-  routes = require("./routes/index");
+require('dotenv').config();
+const express = require('express'),
+  routes = require('./routes/index');
 const app = express();
 const port = process.env.PORT || 8080;
 
@@ -10,4 +10,4 @@ routes(app);
 
 app.listen(port);
 
-console.log("API server is listening on port " + port);
+console.log('API server is listening on port ' + port);

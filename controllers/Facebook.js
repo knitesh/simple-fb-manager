@@ -1,4 +1,4 @@
-const axios = require("axios");
+const axios = require('axios');
 const APP_ID = process.env.APP_ID;
 const APP_SECRET = process.env.APP_SECRET;
 const FB_USER_ID = process.env.FB_USER_ID;
@@ -12,7 +12,7 @@ pwd: passw0rd123
 async function getLongTermAccessToken(options) {
   try {
     const response = await axios.get(
-      "https://graph.facebook.com/oauth/access_token",
+      'https://graph.facebook.com/oauth/access_token',
       { params: options }
     );
     return response.data;
@@ -54,7 +54,7 @@ module.exports = {
     console.log(user_id);
 
     const params = {
-      grant_type: "fb_exchange_token",
+      grant_type: 'fb_exchange_token',
       client_id: APP_ID,
       client_secret: APP_SECRET,
       fb_exchange_token: access_token,
@@ -64,7 +64,7 @@ module.exports = {
       getLongTermAccessToken(params).then((result) => response.json(result));
     } catch (error) {
       response.json({
-        error: "⚠️ Not able to get Long Term Access Token.",
+        error: '⚠️ Not able to get Long Term Access Token.',
       });
     }
   },
@@ -77,7 +77,7 @@ module.exports = {
     const access_token = request.body.access_token;
 
     const options = {
-      fields: "name,access_token",
+      fields: 'name,access_token',
       access_token,
     };
 
@@ -87,7 +87,7 @@ module.exports = {
       );
     } catch (error) {
       response.json({
-        error: "⚠️ Not able to get Page List.",
+        error: '⚠️ Not able to get Page List.',
       });
     }
   },
@@ -107,7 +107,7 @@ module.exports = {
       getPageList(options).then((result) => response.json(result));
     } catch (error) {
       response.json({
-        error: "⚠️ Not able to get Page List.",
+        error: '⚠️ Not able to get Page List.',
       });
     }
   },
