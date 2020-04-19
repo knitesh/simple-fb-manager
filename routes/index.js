@@ -6,6 +6,7 @@ const routes = (app) => {
   app.route('/fb/exchange-access-token').post(fb.postAccessTokenRequest);
   app.route('/fb/pages').get(fb.getManagePageListRequest);
   app.route('/fb/all-pages').get(fb.getPageListRequest);
+  app.route('/fb/post').get(fb.getPost).post(fb.postPost);
   // get Post for all Pages
   // submit Post to a specific Page
   // Update Post for a page
